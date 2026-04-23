@@ -1,0 +1,453 @@
+<!-- BẮT ĐẦU ĐOẠN MÃ DÀNH CHO WORDPRESS -->
+<!-- Dán toàn bộ mã này vào Block "HTML Tùy chỉnh" (Custom HTML) trên WordPress hoặc Elementor -->
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    // Màu vàng đặc trưng của Exness
+                    exness: {
+                        DEFAULT: '#FFC000',
+                        hover: '#e6ad00',
+                        light: '#ffd64d'
+                    },
+                    dark: {
+                        900: '#0a0a0a',
+                        800: '#171717',
+                        700: '#262626'
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    /* Custom scrollbar */
+    .exness-wrapper ::-webkit-scrollbar { width: 8px; }
+    .exness-wrapper ::-webkit-scrollbar-track { background: #171717; }
+    .exness-wrapper ::-webkit-scrollbar-thumb { background: #FFC000; border-radius: 4px; }
+    
+    .glass-panel {
+        background: rgba(23, 23, 23, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(to right, #FFC000, #ffd64d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* FAQ Animation */
+    .exness-wrapper details > summary { list-style: none; }
+    .exness-wrapper details > summary::-webkit-details-marker { display: none; }
+    .exness-wrapper details[open] summary ~ * { animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Fix WordPress Admin Bar Overlap */
+    body.admin-bar .exness-lp-header { top: 32px; }
+    @media screen and (max-width: 782px) {
+        body.admin-bar .exness-lp-header { top: 46px; }
+    }
+    
+    /* Reset some potential WP theme overrides */
+    .exness-wrapper a { text-decoration: none; box-shadow: none; }
+    .exness-wrapper p { margin-bottom: 0; }
+</style>
+
+<!-- KHUNG BỌC TOÀN BỘ LANDING PAGE -->
+<div class="exness-wrapper bg-dark-900 text-white font-sans antialiased selection:bg-exness selection:text-black w-full min-h-screen overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header class="exness-lp-header fixed w-full top-0 z-50 glass-panel border-b border-white/10 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-exness text-2xl"></i>
+                <span class="text-xl font-bold tracking-tight text-white">FX<span class="text-exness">Leader</span></span>
+            </div>
+            <nav class="hidden md:flex gap-8 font-medium text-sm text-gray-300">
+                <a href="#loi-ich" class="hover:text-exness transition">Vì sao chọn Exness?</a>
+                <a href="#dac-quyen-ib" class="hover:text-exness transition">Đặc quyền VIP</a>
+                <a href="#huong-dan" class="hover:text-exness transition">Hướng dẫn</a>
+            </nav>
+            <div>
+                <a href="#huong-dan" class="inline-block bg-exness hover:bg-exness-hover text-black px-5 py-2.5 rounded-full font-semibold text-sm transition shadow-[0_0_15px_rgba(255,192,0,0.3)]">
+                    Mở Tài Khoản
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-exness/10 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] -z-10"></div>
+
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-center lg:text-left z-10">
+                    <div class="inline-block border border-exness/30 bg-exness/10 text-exness px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-star mr-1"></i> Đối tác IB chính thức của Exness
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                        Giao Dịch Cùng <span class="gradient-text">Exness</span> <br> Nhận Đặc Quyền VIP
+                    </h1>
+                    <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Mở tài khoản dưới hệ thống của chúng tôi để nhận hoàn phí (Rebate) tự động lên đến 90%, tham gia nhóm tín hiệu VIP và nhận hỗ trợ 1-1 từ chuyên gia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://one.exness-track.com/a/YOUR_PARTNER_LINK" target="_blank" rel="nofollow" class="bg-exness hover:bg-exness-hover text-black px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-user-plus"></i> Đăng Ký Ngay
+                        </a>
+                        <a href="https://zalo.me/YOUR_ZALO_PHONE" target="_blank" class="glass-panel hover:bg-white/5 text-white px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-blue-400"></i> Hỗ trợ Zalo
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10">
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-1">0.0<span class="text-exness text-lg"> pips</span></div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider">Spread từ</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-1"><i class="fa-solid fa-infinity text-xl"></i></div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider">Đòn bẩy</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-1">0<span class="text-exness text-lg"> phí</span></div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider">Nạp/Rút</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image/Mockup -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative w-full max-w-lg mx-auto">
+                        <!-- Decorative shapes -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-exness to-yellow-600 rounded-2xl blur opacity-30 animate-pulse"></div>
+                        <div class="relative bg-dark-800 rounded-2xl border border-white/10 p-6 shadow-2xl">
+                            <!-- Mock Trading Chart Interface -->
+                            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-exness flex items-center justify-center text-black font-bold">XAU</div>
+                                    <div>
+                                        <div class="font-bold text-white">XAUUSD</div>
+                                        <div class="text-xs text-gray-400">Vàng / Đô la Mỹ</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-green-500 font-bold text-lg">2,345.60</div>
+                                    <div class="text-xs text-green-500/80">+12.4 (0.5%)</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fake Candlestick Chart -->
+                            <div class="h-48 flex items-end justify-between gap-2 mb-6">
+                                <div class="w-1/12 bg-red-500 h-24 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-6 bg-red-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-4 bg-red-500 -translate-x-1/2"></div></div>
+                                <div class="w-1/12 bg-green-500 h-32 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-4 bg-green-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-8 bg-green-500 -translate-x-1/2"></div></div>
+                                <div class="w-1/12 bg-green-500 h-40 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-5 bg-green-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-6 bg-green-500 -translate-x-1/2"></div></div>
+                                <div class="w-1/12 bg-red-500 h-28 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-8 bg-red-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-3 bg-red-500 -translate-x-1/2"></div></div>
+                                <div class="w-1/12 bg-green-500 h-36 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-4 bg-green-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-10 bg-green-500 -translate-x-1/2"></div></div>
+                                <div class="w-1/12 bg-green-500 h-48 rounded-t-sm relative"><div class="absolute top-full left-1/2 w-0.5 h-2 bg-green-500 -translate-x-1/2"></div><div class="absolute bottom-full left-1/2 w-0.5 h-6 bg-green-500 -translate-x-1/2"></div></div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <button class="bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg font-bold transition">Bán (Sell)</button>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-bold transition">Mua (Buy)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Exness Section -->
+    <section id="loi-ich" class="py-20 bg-dark-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Vì Sao Nên Chọn <span class="text-exness">Exness</span>?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-2">Sàn giao dịch uy tín hàng đầu thế giới với các điều kiện giao dịch tốt nhất thị trường.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-white/5 hover:border-exness/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-exness/10 rounded-xl flex items-center justify-center text-exness text-2xl mb-6 group-hover:bg-exness group-hover:text-black transition">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Nạp Rút Tức Thời</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">Hệ thống xét duyệt tự động 24/7. Tiền về tài khoản ngân hàng chỉ trong vài giây, kể cả thứ 7 và Chủ nhật.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-white/5 hover:border-exness/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-exness/10 rounded-xl flex items-center justify-center text-exness text-2xl mb-6 group-hover:bg-exness group-hover:text-black transition">
+                        <i class="fa-solid fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Spread Thấp Từ 0.0</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">Spread cực thấp trên tài khoản Raw Spread và Zero. Tối ưu hóa chi phí giao dịch cho các Scalper.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-white/5 hover:border-exness/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-exness/10 rounded-xl flex items-center justify-center text-exness text-2xl mb-6 group-hover:bg-exness group-hover:text-black transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Uy Tín & Pháp Lý</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">Được cấp phép bởi các tổ chức tài chính hàng đầu thế giới như FCA (Anh), CySEC (Síp), FSA.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-dark-900 p-8 rounded-2xl border border-white/5 hover:border-exness/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-exness/10 rounded-xl flex items-center justify-center text-exness text-2xl mb-6 group-hover:bg-exness group-hover:text-black transition">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Đa Dạng Sản Phẩm</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">Giao dịch Forex, Vàng, Tiền điện tử, Cổ phiếu, Chỉ số... trên cùng một nền tảng MT4/MT5.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IB Perks Section -->
+    <section id="dac-quyen-ib" class="py-20 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-dark-800 to-dark-900 p-6 rounded-2xl border border-exness/20 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-exness/10 rounded-bl-full"></div>
+                            <i class="fa-solid fa-money-bill-transfer text-3xl text-exness mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2 text-white">Hoàn Phí (Rebate) Tự Động</h4>
+                            <p class="text-sm text-gray-400 mt-2">Hoàn trả lên đến 90% hoa hồng IB mỗi ngày trực tiếp vào tài khoản giao dịch của bạn.</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-dark-800 to-dark-900 p-6 rounded-2xl border border-exness/20 relative overflow-hidden mt-0 sm:mt-8">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-exness/10 rounded-bl-full"></div>
+                            <i class="fa-solid fa-tower-broadcast text-3xl text-exness mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2 text-white">Channel Tín Hiệu VIP</h4>
+                            <p class="text-sm text-gray-400 mt-2">Tham gia kênh Telegram VIP, nhận 5-10 tín hiệu chuẩn xác mỗi ngày (Winrate 75%+).</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-dark-800 to-dark-900 p-6 rounded-2xl border border-exness/20 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-exness/10 rounded-bl-full"></div>
+                            <i class="fa-solid fa-book-open-reader text-3xl text-exness mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2 text-white">Tài Liệu Độc Quyền</h4>
+                            <p class="text-sm text-gray-400 mt-2">Được cấp quyền truy cập kho khóa học, indicator và EA (Bot) trị giá hàng nghìn đô.</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-dark-800 to-dark-900 p-6 rounded-2xl border border-exness/20 relative overflow-hidden mt-0 sm:mt-8">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-exness/10 rounded-bl-full"></div>
+                            <i class="fa-solid fa-headset text-3xl text-exness mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2 text-white">Hỗ Trợ 1-Kèm-1</h4>
+                            <p class="text-sm text-gray-400 mt-2">Khắc phục lỗi nạp rút, tư vấn chiến lược gỡ lệnh, quản lý vốn trực tiếp từ Admin.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Tại Sao Phải Đăng Ký Dưới Link <span class="text-exness">Của Chúng Tôi</span>?</h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Nếu bạn tự đăng ký trực tiếp với sàn, bạn sẽ <strong>không nhận được</strong> bất kỳ khoản hoàn phí nào và tự bơi trong thị trường khốc liệt. 
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Khi đăng ký qua link đối tác (IB), chúng tôi trích lại phần lớn hoa hồng sàn trả để <strong>hoàn tiền (Rebate)</strong> cho bạn, giúp bạn giảm tối đa chi phí giao dịch, đồng thời cung cấp hệ sinh thái hỗ trợ toàn diện.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span class="font-medium text-white">Không tốn thêm bất kỳ chi phí nào.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span class="font-medium text-white">Spread và phí giao dịch giữ nguyên, không bị kê sàn.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span class="font-medium text-white">Tiền hoàn (Rebate) cộng trực tiếp vào tài khoản MT4/MT5.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to join (Steps) -->
+    <section id="huong-dan" class="py-20 bg-dark-800">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">3 Bước Đơn Giản Để <span class="text-exness">Bắt Đầu</span></h2>
+                <p class="text-gray-400 mt-2">Tham gia vào cộng đồng của chúng tôi chỉ mất chưa đầy 5 phút.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Line connection (desktop only) -->
+                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-exness/20 via-exness to-exness/20 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Step 1 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-24 h-24 mx-auto bg-dark-900 border-4 border-exness rounded-full flex items-center justify-center text-3xl text-exness font-bold mb-6 shadow-[0_0_20px_rgba(255,192,0,0.2)]">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Mở Tài Khoản</h3>
+                        <p class="text-gray-400 text-sm mb-6 mt-2">Click vào nút bên dưới để đăng ký tài khoản Exness dưới mã đối tác của chúng tôi.</p>
+                        <a href="https://one.exness-track.com/a/YOUR_PARTNER_LINK" target="_blank" rel="nofollow" class="inline-block bg-white/10 hover:bg-exness hover:text-black border border-white/20 hover:border-exness text-white px-6 py-2 rounded-lg font-medium transition">
+                            Link Đăng Ký
+                        </a>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative z-10 text-center mt-8 md:mt-0">
+                        <div class="w-24 h-24 mx-auto bg-dark-900 border-4 border-exness rounded-full flex items-center justify-center text-3xl text-exness font-bold mb-6 shadow-[0_0_20px_rgba(255,192,0,0.2)]">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Xác Minh & Nạp Tiền</h3>
+                        <p class="text-gray-400 text-sm mb-6 mt-2">Tải lên CCCD để xác minh tài khoản. Sau đó nạp số vốn tối thiểu (từ 50$) để bắt đầu.</p>
+                        <div class="inline-block bg-dark-900 text-gray-500 border border-white/10 px-6 py-2 rounded-lg font-medium cursor-not-allowed">
+                            Mã IB: YOUR_CODE
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative z-10 text-center mt-8 md:mt-0">
+                        <div class="w-24 h-24 mx-auto bg-dark-900 border-4 border-exness rounded-full flex items-center justify-center text-3xl text-exness font-bold mb-6 shadow-[0_0_20px_rgba(255,192,0,0.2)]">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Nhắn Tin Cho Admin</h3>
+                        <p class="text-gray-400 text-sm mb-6 mt-2">Gửi ID tài khoản MT4/MT5 cho chúng tôi qua Zalo hoặc Telegram để được duyệt vào Nhóm VIP & Cài tự động hoàn phí.</p>
+                        <a href="https://zalo.me/YOUR_ZALO_PHONE" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg font-medium transition">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Nhắn Zalo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notice for existing users -->
+            <div class="mt-16 bg-blue-900/20 border border-blue-500/30 rounded-xl p-6 text-center max-w-2xl mx-auto">
+                <i class="fa-solid fa-circle-info text-blue-400 text-2xl mb-3"></i>
+                <h4 class="font-bold text-lg text-white mb-2">Đã có tài khoản Exness rồi?</h4>
+                <p class="text-gray-300 text-sm mb-4 mt-2">Bạn vẫn có thể chuyển sang hệ thống của chúng tôi để nhận Rebate & Tín hiệu VIP mà không cần tạo email mới.</p>
+                <a href="https://zalo.me/YOUR_ZALO_PHONE" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold underline text-sm">Xem hướng dẫn chuyển IB tại đây</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Câu Hỏi Thường Gặp (FAQ)</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="bg-dark-800 rounded-xl border border-white/5 group" open>
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-white">
+                        <span>Hoàn phí (Rebate) là gì và nhận như thế nào?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-exness"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 mt-2">
+                        Rebate là phần tiền hoa hồng mà sàn trả cho chúng tôi (IB) khi bạn giao dịch. Thay vì giữ hết, chúng tôi sẽ cài đặt hệ thống tự động hoàn trả lại một phần (lên đến 90%) trực tiếp vào tài khoản MT4/MT5 của bạn hàng ngày. Bạn giao dịch lời hay lỗ đều nhận được khoản tiền này.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="bg-dark-800 rounded-xl border border-white/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-white">
+                        <span>Nhóm tín hiệu VIP có thu phí không?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-exness"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 mt-2">
+                        Hoàn toàn MIỄN PHÍ. Điều kiện duy nhất là bạn mở tài khoản Exness dưới link đối tác của chúng tôi và có phát sinh giao dịch. Chúng tôi thu lợi nhuận từ Volume giao dịch của bạn qua sàn, vì vậy chúng tôi luôn muốn hỗ trợ bạn giao dịch có lợi nhuận để đồng hành lâu dài.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="bg-dark-800 rounded-xl border border-white/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-white">
+                        <span>Nạp rút tiền tại Exness có nhanh không?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-exness"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 mt-2">
+                        Exness nổi tiếng với hệ thống nạp rút tự động tức thời (Instant). Tiền sẽ về thẻ ATM/Internet Banking của bạn chỉ trong vài giây đến vài phút, hỗ trợ 24/7 bao gồm cả Thứ 7 và Chủ Nhật.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-exness z-0"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-black mb-6">Sẵn Sàng Kiếm Tiền Cùng Chúng Tôi?</h2>
+            <p class="text-black/80 font-medium text-lg mb-10 mt-2 max-w-2xl mx-auto">Đừng để lãng phí số tiền phí giao dịch của bạn. Đăng ký ngay hôm nay để được hoàn tiền trên mỗi lot giao dịch và nhận tín hiệu chất lượng.</p>
+            
+            <a href="https://one.exness-track.com/a/YOUR_PARTNER_LINK" target="_blank" rel="nofollow" class="inline-block bg-black text-white hover:bg-gray-800 px-10 py-5 rounded-full font-bold text-xl transition shadow-2xl transform hover:scale-105">
+                MỞ TÀI KHOẢN NGAY <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/10 pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fa-solid fa-chart-line text-exness text-2xl"></i>
+                    <span class="text-xl font-bold tracking-tight text-white">FX<span class="text-exness">Leader</span></span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-600 transition">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Risk Warning (Crucial for Forex IB) -->
+            <div class="border border-red-500/30 bg-red-500/5 p-4 rounded-lg mb-8">
+                <h5 class="text-red-400 font-bold text-sm mb-2 uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Cảnh báo rủi ro
+                </h5>
+                <p class="text-xs text-gray-500 leading-relaxed text-justify mt-2">
+                    Giao dịch Ngoại hối (Forex) và Hợp đồng chênh lệch (CFDs) sử dụng đòn bẩy mang theo mức độ rủi ro cao đối với vốn đầu tư của bạn. Bạn có thể mất toàn bộ số tiền ký quỹ ban đầu. Các sản phẩm này có thể không phù hợp với tất cả các nhà đầu tư. Vui lòng đảm bảo bạn hiểu rõ các rủi ro liên quan và tìm kiếm lời khuyên độc lập nếu cần thiết. Trang web này không phải là trang web chính thức của tập đoàn Exness, chúng tôi là Đối tác Giới thiệu (IB). Mọi thông tin trên trang web chỉ mang tính chất tham khảo và không phải là lời khuyên đầu tư tài chính.
+                </p>
+            </div>
+
+            <div class="text-center text-sm text-gray-600">
+                &copy; 2024 FXLeader - Exness Partner. Bảo lưu mọi quyền.
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- KẾT THÚC ĐOẠN MÃ DÀNH CHO WORDPRESS -->
